@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var todoController = require('./controllers/todoController');
 
 var app = express();
@@ -15,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("./public")); // localhost:port/assets/style.css works
 
 // Launch controllers here
-todoController(app);
+todoController(app, bodyParser);
 
 app.listen(3000);
 
